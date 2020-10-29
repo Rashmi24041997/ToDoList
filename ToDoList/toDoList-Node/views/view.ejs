@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100"     rel="stylesheet">
+    
+          
+    </head>
+    <body>
+       <div class= "container" id="result">
+            <h2>To Do List</h2>
+            <form action="/" method="POST">
+                <input 
+                    type="text" 
+                    name="new" 
+                    placeholder="add new task"
+                />
+                <input 
+                    type="submit" 
+                    id="button1" 
+                    value="Add"                
+                />
+                <h1>Our Post Page!</h1>
+                <ul>  
+                    <%if(tasks!=undefined){tasks.forEach(function(task){ %>
+                    <div id="div">
+                    <input type = "checkbox" (click)="delete('/remove')"/>
+                    <label><%=task%></label><br><% })} %>   
+                    $.post("/remove", function(de)
+                        console.log( "Foo function result:" );
+                      });
+                    </div>             
+                </ul>               
+            </form>            
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            function deleteTask(id){
+                console.log('jayant');
+                //if((id).is(":checked")){
+                    //    var x= $(this).is(":checked")
+                    //    console.log(this);
+                       //  $(this).next().addBack().remove();
+                    //     var task = $(this).next().text();
+                    //     $.ajax({
+                    //         type:"DELETE",
+                    //         url:'/remove',
+                    //         data: task,
+                    //         success:function(data){
+                    //         location.reload();
+                    //         }
+                    //         /*error: function(err){
+                    //             console.log(err);
+                    //         }*/
+
+                    //     })
+                    // }
+            }
+        </script>
+    </body>
+</html>
